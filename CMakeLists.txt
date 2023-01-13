@@ -624,7 +624,3 @@ target_link_libraries(${PROJECT_NAME}
     dpp
     # Add any other libs you want to use here
 )
-target_include_directories(${PROJECT_NAME} PRIVATE
-    src/map/DPP/include
-    # Remember to add the include directories of any other libraries too
-)
