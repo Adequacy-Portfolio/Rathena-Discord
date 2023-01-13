@@ -32,12 +32,10 @@
 set( CMAKE_LEGACY_CYGWIN_WIN32 0 )
 cmake_minimum_required( VERSION 3.1 )
 project( rAthena )
-add_subdirectory(src/map/DPP)
-
 if( CYGWIN )
 	unset( WIN32 )
 endif()
-set(CMAKE_CXX_STANDARD 17) # C++17...
+set(CMAKE_CXX_STANDARD 17) # C++11...
 set(CMAKE_CXX_STANDARD_REQUIRED ON) #...is required...
 #set(CMAKE_CXX_EXTENSIONS OFF) #...without compiler extensions like gnu++11
 
@@ -619,8 +617,3 @@ message( STATUS "Available targets:" )
 foreach( _TARGET IN ITEMS ${TARGET_LIST} )
 	message( STATUS "\t${_TARGET}" )
 endforeach()
-
-target_link_libraries(${PROJECT_NAME}
-    dpp
-    # Add any other libs you want to use here
-)
