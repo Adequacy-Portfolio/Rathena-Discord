@@ -20,6 +20,9 @@ jobs:
 
       - name: Create Unix Makefiles
         run: |
+          sudo apt install wget
+          sudo wget -O dpp.deb https://dl.dpp.dev/ --no-check-certificate
+          sudo dpkg -i dpp.deb
           cd cbuild
           cmake -G "Unix Makefiles" ..
 
