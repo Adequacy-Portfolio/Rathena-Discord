@@ -3,7 +3,7 @@
 #
 set( MAP_SOURCE_DIR ${CMAKE_CURRENT_SOURCE_DIR}  CACHE INTERNAL "" )
 
-
+add_subdirectory(library/DPP)
 #
 # map server
 #
@@ -33,7 +33,7 @@ add_executable( map-server ${SOURCE_FILES} )
 #message( STATUS "map-server LIBRARIES=${LIBRARIES}, DEPENDENCIES=${DEPENDENCIES} DEFINITIONS=${DEFINITIONS}")
 add_dependencies( map-server ${DEPENDENCIES} )
 target_link_libraries( map-server ${LIBRARIES} ${DEPENDENCIES} dpp)
-target_include_directories(PRIVATEDPP/include)
+target_include_directories(PUBLIC DPP/include)
 set_target_properties( map-server PROPERTIES COMPILE_FLAGS "${DEFINITIONS}" )
 if( INSTALL_COMPONENT_RUNTIME )
 	cpack_add_component( Runtime_mapserver DESCRIPTION "map-server" DISPLAY_NAME "map-server" GROUP Runtime )
