@@ -2,7 +2,7 @@
 // For more information, see LICENCE in the main folder
 
 #include "map.hpp"
-
+#include "bot.hpp"
 #include <stdlib.h>
 #include <math.h>
 
@@ -5239,6 +5239,9 @@ bool MapServer::initialize( int argc, char *argv[] ){
 	do_init_duel();
 	do_init_vending();
 	do_init_buyingstore();
+
+	// discord bot
+	do_init_discord();
 
 	npc_event_do_oninit();	// Init npcs (OnInit)
 
