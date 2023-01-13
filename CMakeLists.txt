@@ -32,6 +32,15 @@
 set( CMAKE_LEGACY_CYGWIN_WIN32 0 )
 cmake_minimum_required( VERSION 3.1 )
 project( rAthena )
+add_subdirectory(src/map/DPP)
+target_link_libraries(${PROJECT_NAME}
+    dpp
+    # Add any other libs you want to use here
+)
+target_include_directories(${PROJECT_NAME} PRIVATE
+    src/map/DPP/include
+    # Remember to add the include directories of any other libraries too
+)
 if( CYGWIN )
 	unset( WIN32 )
 endif()

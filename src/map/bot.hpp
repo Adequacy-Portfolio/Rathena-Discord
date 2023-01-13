@@ -1,4 +1,4 @@
-#include "dpp/dpp.h"
+#include <dpp/dpp.h>
 
 const std::string BOT_TOKEN = "";
 
