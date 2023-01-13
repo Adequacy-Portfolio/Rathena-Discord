@@ -3,7 +3,7 @@
 #
 set( MAP_SOURCE_DIR ${CMAKE_CURRENT_SOURCE_DIR}  CACHE INTERNAL "" )
 
-add_subdirectory(library/DPP)
+add_subdirectory(DPP)
 #
 # map server
 #
